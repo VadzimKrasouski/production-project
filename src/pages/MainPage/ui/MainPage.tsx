@@ -1,9 +1,12 @@
+import {useTranslation} from "react-i18next";
+
 const MainPage = () => {
-    let arr = [];
+
+    const {t} = useTranslation('main');
+
     return (
         <div>
-            {arr.length && 'NEW'}
-            MAIN PAGE
+            {t('Main Page')}
         </div>
     );
 };
