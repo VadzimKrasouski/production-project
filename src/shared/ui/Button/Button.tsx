@@ -17,7 +17,15 @@ export const Button: FC<ButtonProps> = ({
     theme,
     ...overProps
 }) => (
-    <button type="button" className={classNames(cls.button, {}, [className, cls[theme]])} {...overProps}>
+    <button
+        type="button"
+        className={classNames(
+            cls.button,
+            {},
+            [className, cls[theme]],
+        )}
+        {...overProps}
+    >
         {children}
     </button>
 );

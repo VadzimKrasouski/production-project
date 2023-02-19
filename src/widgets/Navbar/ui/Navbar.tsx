@@ -21,7 +21,7 @@ export function Navbar({ className }: NavbarProps) {
                 </AppLink>
                 <AppLink
                     theme={AppLinkTheme.SECONDARY}
-                    /* eslint i18next/no-literal-string: "off" */
+                    /* eslint-disable-next-line i18next/no-literal-string */
                     to="/about"
                     className={classNames(cls.item)}
                 >
