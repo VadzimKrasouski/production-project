@@ -11,19 +11,21 @@ interface SidebarProps {
 export function Sidebar({ className }: SidebarProps) {
     const [collapsed, setCollapsed] = useState(false);
 
-    const { t } = useTranslation();
+    const { t } = useTranslation('sidebar');
     const onToggle = () => {
         setCollapsed((prev) => !prev);
     };
     return (
-        <div className={classNames(
-            cls.sidebar,
-            { [cls.collapsed]: collapsed },
-            [className],
-        )}
+        <div
+            data-testid="sidebar"
+            className={classNames(
+                cls.sidebar,
+                { [cls.collapsed]: collapsed },
+                [className],
+            )}
         >
-            <button type="button" onClick={onToggle}>
-                {t('Toggle', { ns: 'translation' })}
+            <button data-testid="sidebar-toggle" type="button" onClick={onToggle}>
+                {t('Toggle', { ns: 'sidebar' })}
             </button>
             <div className={cls.switchers}>
                 <ThemeSwitcher />

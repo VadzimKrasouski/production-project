@@ -7,7 +7,7 @@ interface LangSwitcherProps {
 }
 
 export function LangSwitcher({ className }: LangSwitcherProps) {
-    const { t, i18n } = useTranslation();
+    const { t, i18n } = useTranslation('sidebar');
     const switchLang = () => {
         i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
     };
@@ -17,7 +17,7 @@ export function LangSwitcher({ className }: LangSwitcherProps) {
             onClick={switchLang}
             className={classNames('', {}, [className])}
         >
-            {t('lang', { ns: 'translation' })}
+            {t('lang', { ns: 'sidebar' })}
         </Button>
     );
 }
